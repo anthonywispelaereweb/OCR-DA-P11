@@ -1,0 +1,21 @@
+#root {
+  max-width: 1440px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-rows: 1fr minmax(70%, 1fr) 1fr;
+  height: 100vh;
+  font-family: "Montserrat", sans-serif;
+}
+body {
+  margin: 0;
+}
+.container-flex {
+  display: flex;
+  padding: 45px 100px;
+}
+@media (max-width: 768px) {
+  .container-flex {
+    display: flex;
+    padding: 20px;
+  }
+}
