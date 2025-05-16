@@ -1,7 +1,10 @@
-function Home() {
+import Gallery from "../components/Gallery"
+const Home = () => {
   return (
     <>
-      <div className='container-flex'>Home</div>
+      <div className='container-flex'>
+        <Gallery />
+      </div>
     </>
   )
 }

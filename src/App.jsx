@@ -1,4 +1,3 @@
-import './App.scss'
 import myRoutes from './routing'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import NavBar from './components/Navbar'
