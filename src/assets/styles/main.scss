@@ -8,13 +8,43 @@
   height: 100vh;
   font-family: "Montserrat", sans-serif;
 }
+
 body {
   margin: 0;
 }
+
 .container-flex {
   display: flex;
   padding: 45px 100px;
 }
+
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-center {
+  justify-content: center;
+  align-items: center;
+}
+
+.error-number {
+  font-size: 288px;
+  font-weight: 700;
+  color: $color-red;
+  margin: 0;
+}
+
+.error-message {
+  font-size: 36px;
+  font-weight: 700;
+  color: $color-red;
+  margin: 0;
+}
+
 @media (max-width: 768px) {
   .container-flex {
     display: flex;

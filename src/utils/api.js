@@ -5,10 +5,8 @@
  * @example getData("/logements.json") => { "data": [ { "id": 1, "name": "name1" }, { "id": 2, "name": "name2" } ] }
  */
 const getData = async (url) => {
-  console.log("🚀 ~ getData ~ url:", url)
   try {
     const baseUrl = window.location.origin;
-    console.log("🚀 ~ getData ~ baseUrl:", baseUrl)
     const response = await fetch(baseUrl + url);
     if (response.ok) {
       const data = await response.json();
