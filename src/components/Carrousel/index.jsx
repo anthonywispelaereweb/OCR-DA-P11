@@ -6,10 +6,16 @@ const Carrousel = ({ images }) => {
     <div className='carrousel'>
       {images.length > 1 && (
         <>
-          <div className='carrousel-arrow carrousel-arrow-left' onClick={() => setCurrentIndex(currentIndex === 0 ? images.length - 1 : currentIndex - 1)}>
+          <div
+            className='carrousel-arrow carrousel-arrow-left'
+            onClick={() => setCurrentIndex(currentIndex === 0 ? images.length - 1 : currentIndex - 1)}
+          >
             <i className='fa-solid fa-chevron-left'></i>
           </div>
-          <div className='carrousel-arrow carrousel-arrow-right' onClick={() => setCurrentIndex(currentIndex === images.length - 1 ? 0 : currentIndex + 1)}>
+          <div
+            className='carrousel-arrow carrousel-arrow-right'
+            onClick={() => setCurrentIndex(currentIndex === images.length - 1 ? 0 : currentIndex + 1)}
+          >
             <i className='fa-solid fa-chevron-right'></i>
           </div>
           <div className='carrousel-counter'>

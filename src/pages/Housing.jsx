@@ -1,38 +1,39 @@
-import { useParams, Navigate }  from 'react-router';
-import { useEffect, useState } from 'react';
-import { getDataById } from '../utils/api';
+import { useParams, Navigate } from 'react-router'
+import { useEffect, useState } from 'react'
+import { getDataById } from '../utils/api'
 
-import Carrousel from './../components/Carrousel';
-import Avatar from './../components/Avatar';
-import Tags from './../components/Tags';
+import Carrousel from './../components/Carrousel'
+import Avatar from './../components/Avatar'
+import Tags from './../components/Tags'
+import DropDown from './../components/Dropdown'
 const Housing = () => {
-  const { housingId } = useParams();
-  const [housing, setHousing] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const { housingId } = useParams()
+  const [housing, setHousing] = useState(null)
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState(null)
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const data = await getDataById('/logements.json', housingId);
+        const data = await getDataById('/logements.json', housingId)
         if (!data) {
-          throw new Error('Housing not found');
+          throw new Error('Housing not found')
         }
-        setHousing(data);
-        console.log("🚀 ~ fetchData ~ data:", data)
+        setHousing(data)
+        console.log('🚀 ~ fetchData ~ data:', data)
       } catch (err) {
-        console.error(`Error fetching housing data: ${err}`);
-        setError(err);
+        console.error(`Error fetching housing data: ${err}`)
+        setError(err)
       } finally {
-        setLoading(false);
+        setLoading(false)
       }
-    };
-    fetchData();
-  }, [housingId]);
+    }
+    fetchData()
+  }, [housingId])
   if (loading) {
-    return <div className='container-flex loading'>Loading...</div>;
+    return <div className='container-flex loading'>Loading...</div>
   }
   if (error) {
-    return <Navigate to="/error/404" replace />;
+    return <Navigate to='/error/404' replace />
   }
   return (
     <div className='container-flex housing flex-column'>
@@ -51,28 +52,25 @@ const Housing = () => {
               <Tags tags={housing.tags} />
             </div>
             <div className='housing-info-rating'>
-              <div className="rating">
+              <div className='rating'>
                 {[...Array(5)].map((_, index) => (
-                  <i
-                    key={index}
-                    className={`fa-solid fa-star ${index < housing.rating ? '' : 'empty'}`}
-                  ></i>
+                  <i key={index} className={`fa-solid fa-star ${index < housing.rating ? '' : 'empty'}`}></i>
                 ))}
               </div>
             </div>
-            <div className='housing-info-description'>
-              <p>Description: {housing.description}</p>
-            </div>
-            <div className='housing-info-equipments'>
-              <p>Equipements: {housing.equipments.map((equipment, index) => (
-                <span key={index}>{equipment}</span>
-              ))}</p>
+            <div className='housing-info-dropdowns'>
+              <div className='housing-info-description housing-info-dropdowns-item'>
+                <DropDown title='Description' content={housing.description} />
+              </div>
+              <div className='housing-info-equipments housing-info-dropdowns-item'>
+                <DropDown title='Equipements' content={housing.equipments} />
+              </div>
             </div>
           </div>
         </>
       )}
     </div>
-  );
+  )
 }
 
-export default Housing;
+export default Housing

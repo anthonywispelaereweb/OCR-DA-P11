@@ -1,4 +1,4 @@
-import './Tags.scss';
+import './Tags.scss'
 
 const Tags = ({ tags }) => {
   return (
@@ -9,6 +9,6 @@ const Tags = ({ tags }) => {
         </span>
       ))}
     </div>
-  );
+  )
 }
-export default Tags;
+export default Tags
