@@ -2,9 +2,9 @@
 .card {
   &-link {
     text-decoration: none;
-    width: calc(33% - 20px);
+    width: calc(33% - 40px);
     @media (max-width: 1064px) {
-      width: calc(50% - 20px);
+      width: calc(50% - 30px);
     }
     @media (max-width: 768px) {
       width: 100%;

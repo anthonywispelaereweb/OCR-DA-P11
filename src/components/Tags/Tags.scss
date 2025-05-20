@@ -1,0 +1,20 @@
+@use './../../assets/styles/variables.scss' as *;
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  .tag {
+    display: inline-block;
+    padding: 0.5em 1em;
+    margin: 0.5em;
+    border-radius: 1em;
+    background-color: $color-red;
+    color: $color-white;
+    font-size: 1em;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $color-red-hover;
+    }
+  }
+}

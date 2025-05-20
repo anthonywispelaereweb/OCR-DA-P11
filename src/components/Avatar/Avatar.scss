@@ -1,0 +1,16 @@
+@use "./../../assets/styles/variables.scss" as *;
+.avatar { 
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  &-name {
+    font-size: 18px;
+    font-weight: 500;
+    color: $color-red;
+  }
+  &-img {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+  }
+}

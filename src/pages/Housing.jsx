@@ -1,7 +1,10 @@
 import { useParams, Navigate }  from 'react-router';
-
 import { useEffect, useState } from 'react';
 import { getDataById } from '../utils/api';
+
+import Carrousel from './../components/Carrousel';
+import Avatar from './../components/Avatar';
+import Tags from './../components/Tags';
 const Housing = () => {
   const { housingId } = useParams();
   const [housing, setHousing] = useState(null);
@@ -26,21 +29,47 @@ const Housing = () => {
     fetchData();
   }, [housingId]);
   if (loading) {
-    return <div className='loading'>Loading...</div>;
+    return <div className='container-flex loading'>Loading...</div>;
   }
   if (error) {
     return <Navigate to="/error/404" replace />;
   }
   return (
-    <div className='container-flex housing-page flex-column'>
+    <div className='container-flex housing flex-column'>
       {housing && (
-        <div>
-          <h2>{housing.title}</h2>
-          <img src={housing.pictures[0]} alt={housing.title} />
-          <p>{housing.description}</p>
-          <p>Location: {housing.location}</p>
-          <p>Tags: {housing.tags}</p>
-        </div>
+        <>
+          <Carrousel images={housing.pictures} />
+          <div className='housing-info'>
+            <div className='housing-info-title'>
+              <h2 className='housing-title'>{housing.title}</h2>
+              <p className='housing-location'>{housing.location}</p>
+            </div>
+            <div className='housing-info-avatar'>
+              <Avatar user={housing.host} />
+            </div>
+            <div className='housing-info-tags'>
+              <Tags tags={housing.tags} />
+            </div>
+            <div className='housing-info-rating'>
+              <div className="rating">
+                {[...Array(5)].map((_, index) => (
+                  <i
+                    key={index}
+                    className={`fa-solid fa-star ${index < housing.rating ? '' : 'empty'}`}
+                  ></i>
+                ))}
+              </div>
+            </div>
+            <div className='housing-info-description'>
+              <p>Description: {housing.description}</p>
+            </div>
+            <div className='housing-info-equipments'>
+              <p>Equipements: {housing.equipments.map((equipment, index) => (
+                <span key={index}>{equipment}</span>
+              ))}</p>
+            </div>
+          </div>
+        </>
       )}
     </div>
   );

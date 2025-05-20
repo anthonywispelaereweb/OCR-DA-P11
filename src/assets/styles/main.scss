@@ -1,4 +1,4 @@
-@use "./variables.scss" as *;
+@use './variables.scss' as *;
 
 #root {
   max-width: 1440px;
@@ -6,7 +6,7 @@
   display: grid;
   grid-template-rows: 1fr auto 1fr;
   height: 100vh;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 body {
@@ -30,24 +30,85 @@ body {
   justify-content: center;
   align-items: center;
 }
-
-.error-number {
-  font-size: 288px;
-  font-weight: 700;
-  color: $color-red;
-  margin: 0;
+.error {
+  &-number {
+    font-size: 288px;
+    font-weight: 700;
+    color: $color-red;
+    margin: 0;
+  }
+  &-message {
+    font-size: 36px;
+    font-weight: 700;
+    color: $color-red;
+    margin: 0;
+  }
+  &-link {
+    font-size: 18px;
+    font-weight: 500;
+    color: $color-black;
+    padding-top: 100px;
+    margin: 0;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }
 
-.error-message {
-  font-size: 36px;
-  font-weight: 700;
-  color: $color-red;
-  margin: 0;
+.housing {
+  &-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding-bottom: 1rem;
+    &-title {
+
+    }
+  }
+  &-title {
+    font-size: 36px;
+    font-weight: 500;
+    color: $color-red;
+    margin: 0;
+  }
+  &-location {
+    font-size: 18px;
+    font-weight: 500;
+    color: $color-black;
+    margin: 0;
+  }
+  .rating {
+    display: flex;
+    gap: 4px;
+    .fa-star {
+      font-size: 24px;
+      color: $color-red;
+
+      &.empty {
+        color: $color-gray;
+      }
+    }
+  }
 }
 
 @media (max-width: 768px) {
   .container-flex {
     display: flex;
     padding: 20px;
+  }
+  .housing {
+    &-info {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    &-title {
+      font-size: 24px;
+    }
+    &-location {
+      font-size: 16px;
+    }
   }
 }

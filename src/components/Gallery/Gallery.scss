@@ -1,9 +1,11 @@
+@use './../../assets/styles/variables.scss' as *;
 .gallery {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-  background: #f6f6f6;
+  gap: 60px;
+  row-gap: 50px;
+  background: $color-gray-light;
   padding: 56px 50px;
-  justify-content: space-between;
+  justify-content: flex-start;
   border-radius: 25px;
 }

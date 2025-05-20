@@ -7,6 +7,7 @@ const myRoutes = [
   { path: '/', label: 'Accueil', component: <Home /> },
   { path: '/about', label: 'A Propos', component: <About /> },
   { path: '/housing/:housingId', component: <Housing /> },
+  { path: '/error', component: <ErrorPage /> },
   { path: '/error/:errorId', component: <ErrorPage /> },
 
 ];
