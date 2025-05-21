@@ -11,7 +11,7 @@ const Gallery = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const data = await getData('/logements.json')
+        const data = await getData('/OCR-DA-P11/logements.json')
         setHousings(data)
       } catch (err) {
         setError(err)
@@ -31,7 +31,7 @@ const Gallery = () => {
   return (
     <div className='gallery'>
       {housings.map(({ id, cover, title }) => (
-        <Card key={id} image={cover} title={title} link={`/housing/${id}`} />
+        <Card key={id} image={cover} title={title} link={`/OCR-DA-P11/housing/${id}`} />
       ))}
     </div>
   )
