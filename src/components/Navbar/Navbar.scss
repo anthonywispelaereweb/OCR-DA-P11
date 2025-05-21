@@ -3,6 +3,7 @@
   gap: 1rem;
   justify-content: space-between;
   align-items: center;
+  max-height: calc(68px + 95px);
   &-menu {
     display: flex;
     list-style: none;

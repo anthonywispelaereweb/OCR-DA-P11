@@ -1,0 +1,40 @@
+@use "./../../assets/styles/variables.scss" as *;
+.loader {
+  width: 64px;
+  height: 64px;
+  position: absolute;
+  top: 50%;
+  animation: rotate 1.5s ease-in infinite alternate;
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    color: $color-red;
+    background: currentColor;
+    width: 64px;
+    height: 32px;
+    border-radius: 0 0 50px 50px;
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 10%;
+    background: $color-white;
+    border: 1px solid $color-gray;
+    width: 8px;
+    height: 64px;
+    animation: rotate 1.2s linear infinite alternate-reverse;
+  }
+  &-ctn {
+    min-height: 50vh;
+    position: relative;
+
+  }
+}
+
+@keyframes rotate {
+  100% { transform: rotate(360deg)}
+}
+      

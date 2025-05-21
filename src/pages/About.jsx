@@ -1,4 +1,6 @@
 import DropDown from '../components/Dropdown'
+import Banner from '../components/Banner'
+import BannerImage from './../assets/banner-about.png'
 const About = () => {
   const dropDownContents = [
     {
@@ -24,7 +26,13 @@ const About = () => {
   ]
   return (
     <>
-      <div className='container-flex'>
+      <div className='container-flex flex-column'>
+        <div className="about-banner">
+          <Banner
+            imageUrl={BannerImage}
+            altTexte='Bannière de la page à propos'
+          />
+        </div>
         <div className='about-content'>
           {dropDownContents.map((item, index) => (
             <div key={index} className='about-content-item'>

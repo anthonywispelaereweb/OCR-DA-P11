@@ -8,4 +8,10 @@
   padding: 56px 50px;
   justify-content: flex-start;
   border-radius: 25px;
+  @media (max-width: 768px) {
+    padding: 0;
+    gap: 20px;
+    row-gap: 20px;
+    background: transparent;
+  }
 }

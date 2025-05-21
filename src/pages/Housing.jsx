@@ -6,6 +6,7 @@ import Carrousel from './../components/Carrousel'
 import Avatar from './../components/Avatar'
 import Tags from './../components/Tags'
 import DropDown from './../components/Dropdown'
+import Loader from './../components/Loader'
 const Housing = () => {
   const { housingId } = useParams()
   const [housing, setHousing] = useState(null)
@@ -30,7 +31,7 @@ const Housing = () => {
     fetchData()
   }, [housingId])
   if (loading) {
-    return <div className='container-flex loading'>Loading...</div>
+    return <div className='container-flex flex-center'><Loader /></div>
   }
   if (error) {
     return <Navigate to='/error/404' replace />

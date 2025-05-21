@@ -2,6 +2,8 @@ import './Gallery.scss'
 import { useState, useEffect } from 'react'
 import { getData } from '../../utils/api'
 import Card from './../Card'
+import Loader from './../Loader'
+
 const Gallery = () => {
   const [housings, setHousings] = useState([])
   const [loading, setLoading] = useState(true)
@@ -21,7 +23,7 @@ const Gallery = () => {
   }, [])
 
   if (loading) {
-    return <div className='loading'>Loading...</div>
+    return <div className='container-flex flex-center'><Loader /></div>
   }
   if (error) {
     return <div className='error'>Error: {error.message}</div>
