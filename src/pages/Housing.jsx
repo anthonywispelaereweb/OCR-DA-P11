@@ -20,7 +20,6 @@ const Housing = () => {
           throw new Error('Housing not found')
         }
         setHousing(data)
-        console.log('🚀 ~ fetchData ~ data:', data)
       } catch (err) {
         console.error(`Error fetching housing data: ${err}`)
         setError(err)
