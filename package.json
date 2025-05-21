@@ -6,7 +6,7 @@
   "homepage": "https://anthonywispelaereweb.github.io/OCR-DA-P11",
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -d dist",
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
