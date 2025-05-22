@@ -3,7 +3,7 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "homepage": "https://anthonywispelaereweb.github.io/OCR-DA-P11",
+  "homepage": "https://anthonywispelaereweb.github.io/OCR-DA-P11/",
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
