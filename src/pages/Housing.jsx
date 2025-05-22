@@ -20,7 +20,6 @@ const Housing = () => {
           throw new Error('Housing not found')
         }
         setHousing(data)
-        console.log('🚀 ~ fetchData ~ data:', data)
       } catch (err) {
         console.error(`Error fetching housing data: ${err}`)
         setError(err)
@@ -34,7 +33,7 @@ const Housing = () => {
     return <div className='container-flex flex-center'><Loader /></div>
   }
   if (error) {
-    return <Navigate to='/OCR-DA-P11/error/404' replace />
+    return <Navigate to='/#/OCR-DA-P11/error/404' replace />
   }
   return (
     <div className='container-flex housing flex-column'>

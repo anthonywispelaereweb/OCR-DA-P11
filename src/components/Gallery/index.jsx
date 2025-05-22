@@ -31,7 +31,7 @@ const Gallery = () => {
   return (
     <div className='gallery'>
       {housings.map(({ id, cover, title }) => (
-        <Card key={id} image={cover} title={title} link={`/OCR-DA-P11/housing/${id}`} />
+        <Card key={id} image={cover} title={title} link={`/housing/${id}`} />
       ))}
     </div>
   )
